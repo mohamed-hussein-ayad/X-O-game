@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({ initiaName, symbol }) {
+export default function Player({ initiaName, symbol, isActive }) {
   const [playerName, setPlayerName] = useState(initiaName);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -21,7 +21,7 @@ export default function Player({ initiaName, symbol }) {
   }
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className="player">
         {editablePlayerName}
         <span className="player-symbol">{symbol}</span>
